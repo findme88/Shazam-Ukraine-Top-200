@@ -1,0 +1,175 @@
+
+.navigation {
+  width: 100%;
+  overflow: hidden;
+  @include pos(fixed, $t: 0, $l: 0, $z: 99);
+  border-bottom: 1px solid #e4e4e4;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $white;
+  
+
+  &__menu {
+    @include pos(fixed, $t: 15px, $r: 3%, $z: 99);
+    padding: 10px;
+    transition: 0.3s;
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      + .navigation__menu {
+        width: 56px;
+        right: 250px;
+
+        .burger-menu {
+          span {
+            display: none;
+          }
+
+          &::before {
+            transform: rotate(45deg);
+            left: -1px;
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+            left: -1px;
+            top: 13px;
+          }
+        }
+      }
+      ~ .menu {
+        right: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  
+ 
+
+  @media (max-width: $desktop) {
+    @include pos(fixed, $z: 1, $t: 0, $r: -250px);
+    @include size(250px, 100%);
+    background: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+    padding-top: 25px;
+    display: block;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    margin: 0 20px;
+    text-align: center;
+
+    
+}
+  &__link {
+    text-decoration: none;
+    color: $black;
+    font-weight: bold;
+
+    &:hover {
+      color: #0398FF;
+  }
+  }
+
+  &__icon {
+    @include size (120px, 34px)
+    
+  }
+}
+
+.burger-menu {
+  @mixin line($top: 0) {
+    background: #1c0ee9;
+    border-radius: 3px;
+    position: absolute;
+    transition: 0.3s;
+    top: $top;
+    @include size(100%, 3px);
+  }
+
+  @include size(20px, 17px);
+  display: block;
+  position: relative;
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    transform: translateY(-80%);
+    @include line(50%);
+  }
+
+  &::before {
+    @include line();
+    content: "";
+    transform-origin: 0 0;
+  }
+
+  &::after {
+    @include line(calc(100% - 5px));
+    content: "";
+    transform-origin: 0 100%;
+  }
+}
+
+.search {
+right: 30px;
+  position: absolute;
+  border-radius: 30px;
+  background-color: #F4F4F4;
+  @include size(350px, 60%);
+
+  @media (max-width: $desktop) {
+    right: 100px;
+  }
+
+  @media (max-width: $mobile) {
+    right: 100px;
+    width: 200px;
+  }
+
+  @media (max-width: $mobile-portrait) {
+    display: none;
+  }
+  
+  
+   
+  &__input {
+    border-radius: 30px;
+    width: 100%;
+    font: 14px $roboto 200;
+    outline: 0;
+    background-color: transparent;
+    padding: 14px 50px 14px 20px;
+    &:focus {
+      box-shadow: 0 0 5px #08f;
+    
+     }}
+     &__submit {
+      @include pos($r:10px, $t:50%);
+      transform: translateY(-50%);
+      background: transparent;
+      cursor: pointer;
+       
+     }
+  
+     &__icon {
+       @include size (32px, 22px);
+     }
+  
+}

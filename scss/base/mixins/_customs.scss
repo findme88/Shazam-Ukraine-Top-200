@@ -1,0 +1,5 @@
+@mixin bg($link) {
+	background: url($link) 100% 100% no-repeat;
+	background-size: cover;
+    
+}

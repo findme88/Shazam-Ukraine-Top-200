@@ -1,0 +1,44 @@
+.footer {
+  background-color: #141414;
+  height: 500px;
+
+  &__icon {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    @include size(140px, 55px);
+    fill: $white;
+  }
+
+  &__form {
+    @include size(260px, 42px);
+    &__select {
+      font-size: 18px;
+      background-color: transparent;
+      border: 1px solid #949494;
+      color: #949494;
+      width: 100%;
+      padding: 10px 32px 10px 15px;
+    }
+  }
+  &__store {
+      display: flex;
+      padding-top: 30px;
+  }
+
+  &__googleplay {
+    @include size(110px, 38px);
+    background: url("../images/sprite.png") no-repeat center 4.7%;
+    background-size: 200px auto;
+    border: 1px solid #949494;
+    border-radius: 3px;
+    margin-right: 20px;
+  }
+
+  &__appstore {
+    @include size(110px, 38px);
+    background: url(../images/sprite.png) no-repeat center top;
+    background-size: 200px auto;
+    border: 1px solid #949494;
+    border-radius: 3px;
+  }
+}

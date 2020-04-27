@@ -1,0 +1,97 @@
+.top {
+  padding-top: 100px;
+  color: $black;
+
+  &__icon {
+    @include size(40px);
+    fill: blue;
+  }
+
+  &__200 {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 40px;
+    padding-left: 20px;
+    font-weight: bold;
+  }
+
+  &__select_form {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  &__select {
+    width: 280px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border: 1px solid #d3d3d3;
+    padding-left: 10px;
+    border-radius: 20px;
+    margin-right: 25px;
+
+    &:focus {
+      border-color: #1abee7;
+    }
+  }
+}
+
+// CHARTS
+
+.charts {
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  &__country {
+    font-size: 22px;
+    font-weight: bold;
+
+    &--us {
+      color: $white;
+    }
+
+    &--ger {
+      color: rgb(8, 8, 245);
+    }
+
+    &--gl {
+      color: rgb(0, 255, 234);
+    }
+  }
+
+  &__top {
+    font-size: 16px;
+  }
+
+  &__block {
+    @include size(320px, 150px);
+    padding-top: 10px;
+    padding-left: 15px;
+    color: $white;
+    margin-bottom: 20px;
+
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
+
+  &__bg-1 {
+    @include bg("../images/us.png");
+    
+  }
+
+  &__bg-2 {
+    @include bg("../images/germany.png");
+  }
+
+  &__bg-3 {
+    @include bg("../images/global.png");
+  }
+}
